@@ -1,0 +1,349 @@
+.outer-wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+}
+.outer-wrapper .player {
+  position: relative;
+  background: #fff;
+  min-height: 100%;
+}
+.outer-wrapper .player .top {
+  position: relative;
+  margin-bottom: 1.06667rem;
+  height: 1.06667rem;
+  line-height: 1.06667rem;
+  z-index: 999;
+}
+.outer-wrapper .player .top .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.outer-wrapper .player .top .back .icon-back {
+  display: block;
+  padding: 0.24rem;
+  font-size: 0.53333rem;
+  color: #fff;
+}
+.outer-wrapper .player .top .title {
+  width: 78%;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.42667rem;
+  color: #fff;
+}
+.outer-wrapper .player .top .home {
+  position: absolute;
+  top: 0.05333rem;
+  right: 0.34667rem;
+  height: 100%;
+  font-size: 0.53333rem;
+}
+.outer-wrapper .player .background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.outer-wrapper .player .background .background-mask {
+  width: 120%;
+  height: 120%;
+  transform: translate3d(-10%, -10%, 0);
+  filter: blur(0.4rem);
+}
+.outer-wrapper .player .background .background-mask:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+}
+.outer-wrapper .player .background .background-mask img {
+  width: 100%;
+  height: 100%;
+}
+.outer-wrapper .player .player-cover {
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto;
+  border: 0.13333rem solid #757575;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotate 20s infinite linear;
+}
+.outer-wrapper .player .player-cover.pause {
+  animation-play-state: paused;
+}
+.outer-wrapper .player .player-cover .image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.outer-wrapper .player .bottom {
+  position: absolute;
+  bottom: 0.53333rem;
+  width: 100%;
+  padding: 0 0.53333rem;
+  box-sizing: border-box;
+}
+.outer-wrapper .player .bottom .personalized {
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.outer-wrapper .player .bottom .personalized .item {
+  -ms-flex: 1;
+      flex: 1;
+  text-align: center;
+  font-size: 0.32rem;
+}
+.outer-wrapper .player .bottom .personalized .item .icon {
+  display: inline-block;
+  height: 0.61333rem;
+  line-height: 0.61333rem;
+  margin-bottom: 0.13333rem;
+  color: #fff;
+  box-sizing: border-box;
+}
+.outer-wrapper .player .bottom .personalized .item .icon.to-list {
+  width: 0.61333rem;
+  padding: 0.05333rem;
+  border: 0.04rem solid #fff;
+  border-radius: 50%;
+  line-height: 0.45333rem;
+}
+.outer-wrapper .player .bottom .personalized .item .icon.speed {
+  width: 0.88rem;
+  height: 0.56rem;
+  line-height: 0.50667rem;
+  border-radius: 0.16rem;
+  border: 0.04rem solid #fff;
+  margin-top: 0.05333rem;
+}
+.outer-wrapper .player .bottom .personalized .item i {
+  color: #fff;
+  font-size: 0.69333rem;
+}
+.outer-wrapper .player .bottom .personalized .item i.icon-list, .outer-wrapper .player .bottom .personalized .item i.icon-speed {
+  font-size: 0.32rem;
+}
+.outer-wrapper .player .bottom .personalized .item .text {
+  color: #fff;
+}
+.outer-wrapper .player .bottom .progress-wrapper {
+  margin: 0.8rem auto;
+}
+.outer-wrapper .player .bottom .progress-wrapper .progress-bar {
+  position: relative;
+  height: 0.08rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+.outer-wrapper .player .bottom .progress-wrapper .progress-position {
+  position: absolute;
+  height: 100%;
+  background: #fff;
+}
+.outer-wrapper .player .bottom .progress-wrapper .progress-btn {
+  position: absolute;
+  left: -0.13333rem;
+  top: -0.09333rem;
+  width: 0.26667rem;
+  height: 0.26667rem;
+  border-radius: 50%;
+  background: #fff;
+}
+.outer-wrapper .player .bottom .progress-wrapper .time {
+  font-size: 0.32rem;
+  float: left;
+  height: 0.58667rem;
+  line-height: 0.58667rem;
+  color: #fff;
+}
+.outer-wrapper .player .bottom .progress-wrapper .time.time-now {
+  position: absolute;
+  left: 0;
+  top: 0.16rem;
+}
+.outer-wrapper .player .bottom .progress-wrapper .time.player-duration-time {
+  position: absolute;
+  right: 0;
+  top: 0.16rem;
+}
+.outer-wrapper .player .bottom .operators {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.outer-wrapper .player .bottom .operators .buffering {
+  position: absolute;
+  top: -0.4rem;
+  left: 0.16rem;
+  color: #fff;
+}
+.outer-wrapper .player .bottom .operators .icon {
+  -ms-flex: 1;
+      flex: 1;
+  color: #fff;
+}
+.outer-wrapper .player .bottom .operators .icon.disable {
+  color: #fff;
+}
+.outer-wrapper .player .bottom .operators .icon i {
+  font-size: 0.74667rem;
+  color: #fff;
+}
+.outer-wrapper .player .bottom .operators .icon i.disable {
+  color: #5b5a69;
+}
+.outer-wrapper .player .bottom .operators .i-left {
+  text-align: center;
+}
+.outer-wrapper .player .bottom .operators .i-center {
+  padding: 0 0.26667rem;
+  text-align: center;
+}
+.outer-wrapper .player .bottom .operators .i-center i {
+  display: inline-block;
+  padding: 0.26667rem;
+  border: 0.04rem solid #fff;
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
+.outer-wrapper .player .bottom .operators .i-center i.icon-play-small {
+  display: none;
+}
+.outer-wrapper .player .bottom .operators .i-right {
+  text-align: center;
+}
+.outer-wrapper .player .bottom .operators .icon-prev.disable, .outer-wrapper .player .bottom .operators .icon-next.disable {
+  color: #d7d7d7;
+}
+.outer-wrapper .mask-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: auto;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 201;
+}
+.outer-wrapper .speed-list-wrapper, .outer-wrapper .time-list-wrapper, .outer-wrapper .error-list-wrapper {
+  position: fixed;
+  left: auto;
+  bottom: -100%;
+  font-size: 0.32rem;
+  width: 100%;
+  line-height: 1.06667rem;
+  background: #fff;
+  z-index: 202;
+  transition: all 0.5s ease;
+}
+.outer-wrapper .speed-list-wrapper.show, .outer-wrapper .time-list-wrapper.show, .outer-wrapper .error-list-wrapper.show {
+  bottom: 0;
+}
+.outer-wrapper .speed-list-wrapper .tip, .outer-wrapper .time-list-wrapper .tip, .outer-wrapper .error-list-wrapper .tip {
+  padding: 0.26667rem 0.53333rem;
+  line-height: 0.53333rem;
+  color: #fc6520;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /* no */
+}
+.outer-wrapper .speed-list-wrapper .close, .outer-wrapper .time-list-wrapper .close, .outer-wrapper .error-list-wrapper .close {
+  height: 1.06667rem;
+  font-size: 0.4rem;
+  text-align: center;
+  color: #fff;
+  background: #46bff7;
+}
+.outer-wrapper .speed-list-wrapper li, .outer-wrapper .time-list-wrapper li, .outer-wrapper .error-list-wrapper li {
+  height: 1.06667rem;
+  padding: 0 0.53333rem;
+  color: #838383;
+  font-size: 0.37333rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /* no */
+}
+.outer-wrapper .speed-list-wrapper li.active, .outer-wrapper .time-list-wrapper li.active, .outer-wrapper .error-list-wrapper li.active {
+  color: #e69f3a;
+}
+.outer-wrapper .speed-list-wrapper li.active .num, .outer-wrapper .time-list-wrapper li.active .num, .outer-wrapper .error-list-wrapper li.active .num {
+  color: #e69f3a;
+}
+
+.bbs-report {
+  padding: 0.53333rem 0.26667rem 0.4rem;
+}
+.bbs-report .bbs-cont {
+  width: 100%;
+  height: 3.46667rem;
+  outline: none;
+  resize: none;
+  padding: 0.26667rem;
+  font-size: 0.4rem;
+  border-radius: 0.08rem;
+  box-sizing: border-box;
+}
+.bbs-report .bbs-btns {
+  text-align: center;
+}
+.bbs-report .bbs-btns .bbs-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 0 0.26667rem;
+  background: #46bff7;
+  color: #fff;
+  font-size: 0.37333rem;
+  border-radius: 0.13333rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+}
+.bbs-report .bbs-btns .bbs-btn:nth-of-type(2) {
+  margin-left: 0.21333rem;
+  text-decoration: none;
+  background: #999;
+}
+
+.loading-container {
+  position: absolute;
+  width: 100%;
+  top: 10rem;
+  z-index: 999;
+}
+.loading-container .desc {
+  color: #fff !important;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
