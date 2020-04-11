@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="https://damingzhijun.gitee.io/yueduwenben/play/img.css" />
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+            <title>大铭之君的教程</title>
+
  
 </head>
 
@@ -23,19 +25,20 @@
 
     </div>
     <script>
-        function load_README() {
-            $.get("Rule/BookSource_Instruction.md", function (response, status, xhr) {
+    function load_README() {
+            $.get("README.md", function (response, status, xhr) {
                 var converter = new showdown.Converter();
                 $("#content").html(converter.makeHtml(response));
             });
         }
 
         function load_Subscribe() {
-            $.get("Rule/RssSource_Instruction.md", function (response, status, xhr) {
+            $.get("images/create-octocat.png", function (response, status, xhr) {
                 var converter = new showdown.Converter();
                 $("#content").html(converter.makeHtml(response));
             });
         }
+    
     </script>
     <div id="content">
         <img src="https://gitee.com/alanskycn/yuedu/raw/master/JS/portfolio8.jpg">
