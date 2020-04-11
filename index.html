@@ -24,22 +24,17 @@
         </ul>
 
     </div>
-    <script>
-    function load_README(text) {
-            $.get(text, function (response, status, xhr) {
-                var converter = new showdown.Converter();
-                $("#content").html(converter.makeHtml(response));
-            });
-        }
 
-        function load_Subscribe() {
-            $.get("images/create-octocat.png", function (response, status, xhr) {
-                var converter = new showdown.Converter();
-                $("#content").html(converter.makeHtml(response));
-            });
-        }
-    
-    </script>
+   <script language=”JavaScript”>
+ document.write(“<p>Here’s some information about this document:</p>”);
+ document.write(“<ul>”);
+ document.write(“<li>Referring Document: “ + document.referrer + “</li>”);
+ document.write(“<li>Domain: “ + document.domain + “</li>”);
+ document.write(“<li>URL: “ + document.URL + “</li>”);
+ document.write(“</ul>”);
+
+</script> 
+
     <div id="content">
         <img src="https://gitee.com/alanskycn/yuedu/raw/master/JS/portfolio8.jpg">
     </div>
