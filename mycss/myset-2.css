@@ -1,0 +1,12 @@
+body{
+background-color:floralwhite;
+background-size:contain;
+}
+
+video{
+width=100%;
+height=300px;
+}
+
+
+.p{white-space:pre-wrap; width:80%;}
