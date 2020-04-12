@@ -9,6 +9,6 @@ height=300px;
 }
 
 
-p{white-space:pre-wrap; width:80%;}
-span{white-space:pre-wrap; width:80%;}
+p{white-space:pre-wrap; word-wrap:break-word;width:80%;}
+span{white-space:pre-wrap; word-wrap:break-word;width:80%;}
 
