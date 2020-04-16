@@ -1,113 +1,113 @@
-## Legadoä¹¦æºè§„åˆ™è¯´æ˜Ž
-æ›´æ–°æ—¶é—´ï¼š2020-04-13
-### æ¦‚å†µ
+## Legado书源规则说明
+更新时间：2020-04-13
+### 概况
 
-  - 1ã€è¯­æ³•è¯´æ˜Ž
-  - 2ã€Legadoçš„ç‰¹æ®Šè§„åˆ™
-  - 3ã€ä¹¦æºä¹‹ã€ŒåŸºæœ¬ã€
-  - 4ã€ä¹¦æºä¹‹ã€Œæœç´¢ã€
-  - 5ã€ä¹¦æºä¹‹ã€Œå‘çŽ°ã€
-  - 6ã€ä¹¦æºä¹‹ã€Œè¯¦æƒ…é¡µã€
-  - 7ã€ä¹¦æºä¹‹ã€Œç›®å½•ã€
-  - 8ã€ä¹¦æºä¹‹ã€Œæ­£æ–‡ã€
-  - 9ã€è¡¥å……è¯´æ˜Ž
+  - 1、语法说明
+  - 2、Legado的特殊规则
+  - 3、书源之「基本」
+  - 4、书源之「搜索」
+  - 5、书源之「发现」
+  - 6、书源之「详情页」
+  - 7、书源之「目录」
+  - 8、书源之「正文」
+  - 9、补充说明
 
 ------
 
-### 1ã€è¯­æ³•è¯´æ˜Ž
-  + JSOUPä¹‹Default
-    - è¯­æ³•å¦‚ä¸‹ï¼š
+### 1、语法说明
+  + JSOUP之Default
+    - 语法如下：
     ```
-     @ä¸ºåˆ†éš”ç¬¦,ç”¨æ¥åˆ†éš”èŽ·å–è§„åˆ™
-     æ¯æ®µè§„åˆ™å¯åˆ†ä¸º3æ®µ
-     ç¬¬ä¸€æ®µæ˜¯ç±»åž‹,å¦‚class,id,tag,text,childrenç­‰, childrenèŽ·å–æ‰€æœ‰å­æ ‡ç­¾,ä¸éœ€è¦ç¬¬äºŒæ®µå’Œç¬¬ä¸‰æ®µ,textå¯ä»¥æ ¹æ®æ–‡æœ¬å†…å®¹èŽ·å–
-     ç¬¬äºŒæ®µæ˜¯åç§°,text. ç¬¬äºŒæ®µä¸ºæ–‡æœ¬å†…å®¹çš„ä¸€éƒ¨åˆ†
-     ç¬¬ä¸‰æ®µæ˜¯ä½ç½®,class,tag,idç­‰ä¼šèŽ·å–åˆ°å¤šä¸ª,æ‰€ä»¥è¦åŠ ä½ç½®
-     å¦‚ä¸åŠ ä½ç½®ä¼šèŽ·å–æ‰€æœ‰
-     ä½ç½®æ­£ç€æ•°ä»Ž0å¼€å§‹,0æ˜¯ç¬¬ä¸€ä¸ª,å¦‚ä¸ºè´Ÿæ•°åˆ™æ˜¯å–å€’ç€æ•°çš„å€¼,-1ä¸ºå€’æ•°ç¬¬ä¸€ä¸ª,-2ä¸ºå€’æ•°ç¬¬äºŒä¸ª
-     !æ˜¯æŽ’é™¤,æœ‰äº›ä½ç½®ä¸ç¬¦åˆéœ€è¦æŽ’é™¤ç”¨!,åŽé¢çš„åºå·ç”¨:éš”å¼€0æ˜¯ç¬¬1ä¸ª,è´Ÿæ•°ä¸ºå€’æ•°åºå·,-1æœ€åŽä¸€ä¸ª,-2å€’æ•°ç¬¬2ä¸ª,ä¾æ¬¡
-     èŽ·å–åˆ—è¡¨çš„æœ€å‰é¢åŠ ä¸Šè´Ÿå·- å¯ä»¥ä½¿åˆ—è¡¨å€’ç½®,æœ‰äº›ç½‘ç«™ç›®å½•åˆ—è¡¨æ˜¯å€’çš„,å‰é¢åŠ ä¸ªè´Ÿå·å¯å˜ä¸ºæ­£çš„
-     @çš„æœ€åŽä¸€æ®µä¸ºèŽ·å–å†…å®¹,å¦‚text,textNodes,ownText,href,src,html,allç­‰
-     å¦‚éœ€è¦æ­£åˆ™æ›¿æ¢åœ¨æœ€åŽåŠ ä¸Š ##æ­£åˆ™è¡¨è¾¾å¼##æ›¿æ¢å†…å®¹ï¼Œæ›¿æ¢å†…å®¹ä¸ºç©ºæ—¶ï¼Œç¬¬äºŒä¸ª##å¯ä»¥çœç•¥
-     ä¾‹:class.odd.0@tag.a.0@text||tag.dd.0@tag.h1@text##å…¨æ–‡é˜…è¯»
-     ä¾‹:class.odd.0@tag.a.0@text&&tag.dd.0@tag.h1@text##å…¨æ–‡é˜…è¯»
+     @为分隔符,用来分隔获取规则
+     每段规则可分为3段
+     第一段是类型,如class,id,tag,text,children等, children获取所有子标签,不需要第二段和第三段,text可以根据文本内容获取
+     第二段是名称,text. 第二段为文本内容的一部分
+     第三段是位置,class,tag,id等会获取到多个,所以要加位置
+     如不加位置会获取所有
+     位置正着数从0开始,0是第一个,如为负数则是取倒着数的值,-1为倒数第一个,-2为倒数第二个
+     !是排除,有些位置不符合需要排除用!,后面的序号用:隔开0是第1个,负数为倒数序号,-1最后一个,-2倒数第2个,依次
+     获取列表的最前面加上负号- 可以使列表倒置,有些网站目录列表是倒的,前面加个负号可变为正的
+     @的最后一段为获取内容,如text,textNodes,ownText,href,src,html,all等
+     如需要正则替换在最后加上 ##正则表达式##替换内容，替换内容为空时，第二个##可以省略
+     例:class.odd.0@tag.a.0@text||tag.dd.0@tag.h1@text##全文阅读
+     例:class.odd.0@tag.a.0@text&&tag.dd.0@tag.h1@text##全文阅读
     ```
   
-    - æ ‡å‡†è§„èŒƒä¸Žå®žçŽ°åº“ [Package org.jsoup.select, CSS-like element selector](https://jsoup.org/apidocs/org/jsoup/select/Selector.html)
+    - 标准规范与实现库 [Package org.jsoup.select, CSS-like element selector](https://jsoup.org/apidocs/org/jsoup/select/Selector.html)
    
-  + JSOUPä¹‹CSS
-    - è¯­æ³•è§http://www.open-open.com/jsoup/selector-syntax.htm
-    - å¿…é¡»ä»¥ `@css:` å¼€å¤´
-    - æ ‡å‡†è§„èŒƒä¸Žå®žçŽ°åº“ [Package org.jsoup.select, CSS-like element selector](https://jsoup.org/apidocs/org/jsoup/select/Selector.html)
-    - åœ¨çº¿æµ‹è¯• [Try jsoup online: Java HTML parser and CSS debugger](https://try.jsoup.org/)
-   - æ³¨æ„ï¼šèŽ·å–å†…å®¹å¯ç”¨text,textNodes,ownText,html,all,href,srcç­‰
-   - ä¾‹å­è§æœ€åŽçš„ã€ä¹¦æºä¸€ã€‘çš„æœç´¢é¡µå’Œæ­£æ–‡é¡µè§„åˆ™
+  + JSOUP之CSS
+    - 语法见http://www.open-open.com/jsoup/selector-syntax.htm
+    - 必须以 `@css:` 开头
+    - 标准规范与实现库 [Package org.jsoup.select, CSS-like element selector](https://jsoup.org/apidocs/org/jsoup/select/Selector.html)
+    - 在线测试 [Try jsoup online: Java HTML parser and CSS debugger](https://try.jsoup.org/)
+   - 注意：获取内容可用text,textNodes,ownText,html,all,href,src等
+   - 例子见最后的【书源一】的搜索页和正文页规则
 
   + JSONPath 
-    - è¯­æ³•è§ [JsonPathæ•™ç¨‹](https://blog.csdn.net/koflance/article/details/63262484)
-    - æœ€å¥½ä»¥ `@json:` æˆ– `$.` å¼€å¤´ï¼Œå…¶ä»–å½¢å¼ä¸å¯é 
-    - æ ‡å‡†è§„èŒƒ [goessner JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
-    - å®žçŽ°åº“ [json-path/JsonPath](https://github.com/json-path/JsonPath)
-    - åœ¨çº¿æµ‹è¯• [Jayway JsonPath Evaluator](http://jsonpath.herokuapp.com/)
-   - ä¾‹å­è§æœ€åŽçš„ã€ä¹¦æºä¸‰ã€‘çš„æœç´¢é¡µã€ç›®å½•é¡µå’Œæ­£æ–‡é¡µè§„åˆ™
+    - 语法见 [JsonPath教程](https://blog.csdn.net/koflance/article/details/63262484)
+    - 最好以 `@json:` 或 `$.` 开头，其他形式不可靠
+    - 标准规范 [goessner JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
+    - 实现库 [json-path/JsonPath](https://github.com/json-path/JsonPath)
+    - 在线测试 [Jayway JsonPath Evaluator](http://jsonpath.herokuapp.com/)
+   - 例子见最后的【书源三】的搜索页、目录页和正文页规则
 
   + XPath
-    - è¯­æ³•è§ [XPathæ•™ç¨‹](https://www.w3school.com.cn/xpath/index.asp)ã€[XPathåº“çš„è¯´æ˜Ž](https://github.com/zhegexiaohuozi/JsoupXpath/blob/master/README.md)
-    - å¿…é¡»ä»¥ `@XPath:` æˆ– `//` å¼€å¤´
-    - æ ‡å‡†è§„èŒƒ [W3C XPATH 1.0](https://www.w3.org/TR/1999/REC-xpath-19991116/) 
-    - å®žçŽ°åº“ [hegexiaohuozi/JsoupXpath](https://github.com/zhegexiaohuozi/JsoupXpath)
-   - ä¾‹å­è§æœ€åŽçš„ã€ä¹¦æºäºŒã€‘çš„æœç´¢é¡µã€è¯¦æƒ…é¡µå’Œæ­£æ–‡é¡µè§„åˆ™ï¼Œä»¥åŠç›®å½•é¡µçš„ä¸‹ä¸€é¡µè§„åˆ™
+    - 语法见 [XPath教程](https://www.w3school.com.cn/xpath/index.asp)、[XPath库的说明](https://github.com/zhegexiaohuozi/JsoupXpath/blob/master/README.md)
+    - 必须以 `@XPath:` 或 `//` 开头
+    - 标准规范 [W3C XPATH 1.0](https://www.w3.org/TR/1999/REC-xpath-19991116/) 
+    - 实现库 [hegexiaohuozi/JsoupXpath](https://github.com/zhegexiaohuozi/JsoupXpath)
+   - 例子见最后的【书源二】的搜索页、详情页和正文页规则，以及目录页的下一页规则
 
   + JavaScript
-    - å¯ä»¥åœ¨ `<js></js>`ã€`@js:`ä¸­ä½¿ç”¨ï¼Œç»“æžœå­˜åœ¨resultä¸­
-    - `@js:`åªèƒ½æ”¾åœ¨å…¶ä»–è§„åˆ™çš„æœ€åŽä½¿ç”¨
-    - `<js></js>`å¯ä»¥åœ¨ä»»æ„ä½ç½®ä½¿ç”¨ï¼Œè¿˜èƒ½ä½œä¸ºå…¶ä»–è§„åˆ™çš„åˆ†éš”ç¬¦ï¼Œä¾‹ï¼š`tag.li<js></js>//a`
-    - åœ¨æœç´¢åˆ—è¡¨ã€å‘çŽ°åˆ—è¡¨å’Œç›®å½•ä¸­ä½¿ç”¨å¯ä»¥ç”¨`+`å¼€å¤´ï¼Œä½¿ç”¨AllInOneè§„åˆ™
+    - 可以在 `<js></js>`、`@js:`中使用，结果存在result中
+    - `@js:`只能放在其他规则的最后使用
+    - `<js></js>`可以在任意位置使用，还能作为其他规则的分隔符，例：`tag.li<js></js>//a`
+    - 在搜索列表、发现列表和目录中使用可以用`+`开头，使用AllInOne规则
    
-  + æ­£åˆ™ä¹‹AllInOne
-    - åªèƒ½åœ¨æœç´¢åˆ—è¡¨ã€å‘çŽ°åˆ—è¡¨ã€è¯¦æƒ…é¡µé¢„åŠ è½½å’Œç›®å½•åˆ—è¡¨ä¸­ä½¿ç”¨
+  + 正则之AllInOne
+    - 只能在搜索列表、发现列表、详情页预加载和目录列表中使用
     
-    - å¿…é¡»ä»¥ `:` å¼€å¤´
+    - 必须以 `:` 开头
     
-    - æ•™ç¨‹ [veedrin/horseshoe 2018-10 | Regexä¸“é¢˜](https://github.com/veedrin/horseshoe#2018-10--regex%E4%B8%93%E9%A2%98)
+    - 教程 [veedrin/horseshoe 2018-10 | Regex专题](https://github.com/veedrin/horseshoe#2018-10--regex%E4%B8%93%E9%A2%98)
       
-      [è¯­æ³•](https://github.com/veedrin/horseshoe/blob/master/regex/%E8%AF%AD%E6%B3%95.md)   [æ–¹æ³•](https://github.com/veedrin/horseshoe/blob/master/regex/%E6%96%B9%E6%B3%95.md)  [å¼•æ“Ž](https://github.com/veedrin/horseshoe/blob/master/regex/%E5%BC%95%E6%93%8E.md)
+      [语法](https://github.com/veedrin/horseshoe/blob/master/regex/%E8%AF%AD%E6%B3%95.md)   [方法](https://github.com/veedrin/horseshoe/blob/master/regex/%E6%96%B9%E6%B3%95.md)  [引擎](https://github.com/veedrin/horseshoe/blob/master/regex/%E5%BC%95%E6%93%8E.md)
       
-    - ä¾‹å­è§æœ€åŽçš„ã€ä¹¦æºä¸€ã€‘çš„ç›®å½•é¡µè§„åˆ™ï¼Œæœ€å‰é¢çš„`-`è¡¨ç¤ºç›®å½•å€’åºï¼Œä»¥åŠã€ä¹¦æºäºŒã€‘çš„ç›®å½•é¡µè§„åˆ™
+    - 例子见最后的【书源一】的目录页规则，最前面的`-`表示目录倒序，以及【书源二】的目录页规则
     
-  + æ­£åˆ™ä¹‹OnlyOne
-    - å½¢å¼ `##æ­£åˆ™è¡¨è¾¾å¼##æ›¿æ¢å†…å®¹###`
-    - åªèƒ½åœ¨æœç´¢åˆ—è¡¨ã€å‘çŽ°åˆ—è¡¨ã€è¯¦æƒ…é¡µé¢„åŠ è½½ã€ç›®å½•åˆ—è¡¨ä¹‹å¤–ä½¿ç”¨
-    - ä¾‹å­è§æœ€åŽçš„ã€ä¹¦æºä¸€ã€‘çš„è¯¦æƒ…é¡µè§„åˆ™
-  - æ³¨æ„ç‚¹ï¼šè¯¥è§„åˆ™åªèƒ½èŽ·å–ç¬¬ä¸€ä¸ªåŒ¹é…åˆ°çš„ç»“æžœå¹¶è¿›è¡Œæ›¿æ¢
+  + 正则之OnlyOne
+    - 形式 `##正则表达式##替换内容###`
+    - 只能在搜索列表、发现列表、详情页预加载、目录列表之外使用
+    - 例子见最后的【书源一】的详情页规则
+  - 注意点：该规则只能获取第一个匹配到的结果并进行替换
 
-  + æ­£åˆ™ä¹‹å‡€åŒ–
-    - å½¢å¼ `##æ­£åˆ™è¡¨è¾¾å¼##æ›¿æ¢å†…å®¹`
-    - åªèƒ½è·Ÿåœ¨å…¶ä»–è§„åˆ™åŽé¢ï¼Œç‹¬ç«‹ä½¿ç”¨ç›¸å½“äºŽ`all##æ­£åˆ™è¡¨è¾¾å¼##æ›¿æ¢å†…å®¹`
-    - ä¾‹å­è§æœ€åŽçš„ã€ä¹¦æºä¸€ã€‘çš„æ­£æ–‡é¡µè§„åˆ™
-  - æ³¨æ„ç‚¹ï¼šè¯¥è§„åˆ™ä¸ºå¾ªçŽ¯åŒ¹é…æ›¿æ¢
+  + 正则之净化
+    - 形式 `##正则表达式##替换内容`
+    - 只能跟在其他规则后面，独立使用相当于`all##正则表达式##替换内容`
+    - 例子见最后的【书源一】的正文页规则
+  - 注意点：该规则为循环匹配替换
 
-  + è‡ªå®šä¹‰ä¸‰ç§è¿žæŽ¥ç¬¦å·
-    - ç¬¦å·ï¼š`&&`ã€`||`ã€`%%`
+  + 自定义三种连接符号
+    - 符号：`&&`、`||`、`%%`
     
-    - åªèƒ½åœ¨åŒç§è§„åˆ™é—´ä½¿ç”¨ï¼Œä¸åŒ…æ‹¬jså’Œæ­£åˆ™
+    - 只能在同种规则间使用，不包括js和正则
     
-    - `&&`ä¼šåˆå¹¶æ‰€æœ‰å–åˆ°çš„å€¼,
+    - `&&`会合并所有取到的值,
     
-    - `||`ä¼šä»¥ç¬¬ä¸€ä¸ªå–åˆ°å€¼çš„ä¸ºå‡†
+    - `||`会以第一个取到值的为准
     
-    - `%%`ä¼šä¾æ¬¡å–æ•°ï¼Œå¦‚ä¸‰ä¸ªåˆ—è¡¨ï¼Œ
+    - `%%`会依次取数，如三个列表，
     
-      å…ˆå–åˆ—è¡¨1çš„ç¬¬ä¸€ä¸ªï¼Œå†å–åˆ—è¡¨2çš„ç¬¬ä¸€ä¸ªï¼Œå†å–åˆ—è¡¨3çš„ç¬¬ä¸€ä¸ªï¼Œ
+      先取列表1的第一个，再取列表2的第一个，再取列表3的第一个，
     
-      å†å–åˆ—è¡¨1çš„ç¬¬äºŒä¸ªï¼Œå†å–åˆ—è¡¨2çš„ç¬¬äºŒä¸ª...
+      再取列表1的第二个，再取列表2的第二个...
 
-### 2ã€Legadoçš„ç‰¹æ®Šè§„åˆ™
-  + URLå¿…çŸ¥å¿…ä¼š
+### 2、Legado的特殊规则
+  + URL必知必会
 
-    1. è¯·æ±‚å¤´
+    1. 请求头
 
-       - ä¸€èˆ¬å½¢å¼ï¼Œå¦‚ä¸‹æ‰€ç¤º
+       - 一般形式，如下所示
 
          ```
          {
@@ -118,7 +118,7 @@
 
          
 
-       - å¤æ‚æƒ…å†µå¯ä½¿ç”¨js
+       - 复杂情况可使用js
 
          ```
          <js>
@@ -129,13 +129,13 @@
          })()
          </js>
          ```
-         â€»å…¶ä¸­ï¼Œ`ua`å¿…é¡»ä¿è¯æ˜¯`JavaScript`çš„`String`ç±»åž‹ï¼Œ`JSON.stringify()`æ‰èƒ½å°†`header`è½¬æ¢ä¸ºå­—ç¬¦ä¸²ã€‚
+         ※其中，`ua`必须保证是`JavaScript`的`String`类型，`JSON.stringify()`才能将`header`转换为字符串。
 
          
 
-    2. GETè¯·æ±‚
+    2. GET请求
 
-       - ä¸€èˆ¬å½¢å¼å¦‚ä¸‹ï¼Œcharsetä¸ºutf-8æ—¶å¯çœç•¥ï¼Œæ— ç‰¹æ®Šæƒ…å†µä¸éœ€è¦è¯·æ±‚å¤´å’ŒwebViewï¼Œå‚æ•°webViewéžç©ºæ—¶é‡‡ç”¨webViewåŠ è½½
+       - 一般形式如下，charset为utf-8时可省略，无特殊情况不需要请求头和webView，参数webView非空时采用webView加载
 
          ```
          https://www.baidu.com,{
@@ -145,7 +145,7 @@
          }
          ```
 
-       - å¤æ‚æƒ…å†µå¯ä½¿ç”¨js
+       - 复杂情况可使用js
 
          ```
          <js>
@@ -159,13 +159,13 @@
          	"https://www.baidu.com," + JSON.stringify(option)
          </js>
          ```
-         â€»å…¶ä¸­ï¼Œ`ua`å¿…é¡»ä¿è¯æ˜¯`JavaScript`çš„`String`ç±»åž‹ï¼Œ`JSON.stringify()`æ‰èƒ½å°†`header`è½¬æ¢ä¸ºå­—ç¬¦ä¸²ã€‚
+         ※其中，`ua`必须保证是`JavaScript`的`String`类型，`JSON.stringify()`才能将`header`转换为字符串。
 
          
 
-    3. POSTè¯·æ±‚
+    3. POST请求
 
-       - ä¸€èˆ¬å½¢å¼å¦‚ä¸‹ï¼Œbodyæ˜¯è¯·æ±‚ä½“ï¼Œcharsetä¸ºutf-8æ—¶å¯çœç•¥ï¼Œæ— ç‰¹æ®Šæƒ…å†µä¸éœ€è¦è¯·æ±‚å¤´å’ŒwebViewï¼Œå‚æ•°webViewéžç©ºæ—¶é‡‡ç”¨webViewåŠ è½½
+       - 一般形式如下，body是请求体，charset为utf-8时可省略，无特殊情况不需要请求头和webView，参数webView非空时采用webView加载
 
          ```
          https://www.baidu.com,{
@@ -177,7 +177,7 @@
          }
          ```
 
-       - å¤æ‚æƒ…å†µå¯ä½¿ç”¨js
+       - 复杂情况可使用js
 
          ```
          <js>
@@ -194,188 +194,188 @@
          	"https://www.baidu.com," + JSON.stringify(option)
          </js>
          ```
-         â€»å…¶ä¸­ï¼Œ`ua`å’Œ`body`å¿…é¡»ä¿è¯æ˜¯`JavaScript`çš„`String`ç±»åž‹ï¼Œ`JSON.stringify()`æ‰èƒ½è½¬æ¢å­—ç¬¦ä¸²æˆåŠŸã€‚å˜é‡æ˜¯è®¡ç®—å¾—åˆ°çš„å°½é‡éƒ½ç”¨`String()`å¼ºè½¬ä¸€ä¸‹ç±»åž‹ã€‚
+         ※其中，`ua`和`body`必须保证是`JavaScript`的`String`类型，`JSON.stringify()`才能转换字符串成功。变量是计算得到的尽量都用`String()`强转一下类型。
 
          
 
-  + å˜é‡çš„putä¸Žget
+  + 变量的put与get
 
-    - `@put`ä¸Ž`@get`
+    - `@put`与`@get`
 
-      åªèƒ½ç”¨äºŽjsä»¥å¤–çš„è§„åˆ™ä¸­ï¼Œ@puté‡Œä½¿ç”¨JSONPathä¸éœ€è¦åŠ å¼•å·ï¼Œå…¶ä»–è§„åˆ™éœ€è¦åŠ å¼•å·ï¼Œ
+      只能用于js以外的规则中，@put里使用JSONPath不需要加引号，其他规则需要加引号，
 
-      ä¾‹ï¼š@put:{bid:"//*[@bid-data]/@bid-data"}
+      例：@put:{bid:"//*[@bid-data]/@bid-data"}
 
-    - `java.put`ä¸Ž`java.get`
+    - `java.put`与`java.get`
 
-      åªèƒ½ç”¨äºŽjsä¸­ï¼Œåœ¨jsä¸­æ— æ³•ä½¿ç”¨@get
+      只能用于js中，在js中无法使用@get
 
 
-  +  `{{}}`ä¸Ž`{}`è§„åˆ™
+  +  `{{}}`与`{}`规则
 
-    - åœ¨æœç´¢URLä¸Žå‘çŽ°URLä¸­çš„`{{}}`
+    - 在搜索URL与发现URL中的`{{}}`
 
-      åœ¨{{}}é‡Œåªèƒ½ä½¿ç”¨js
+      在{{}}里只能使用js
 
-    - åœ¨æœç´¢URLä¸Žå‘çŽ°URLä»¥å¤–çš„`{{}}`
+    - 在搜索URL与发现URL以外的`{{}}`
 
-      å¯åœ¨`{{}}`ä¸­ä½¿ç”¨ä»»æ„è§„åˆ™ï¼ˆæ­£åˆ™é™¤å¤–ï¼Ÿï¼‰ï¼Œé»˜è®¤ä¸ºjsï¼Œä½¿ç”¨å…¶ä»–è§„åˆ™éœ€è¦æœ‰æ˜Žæ˜¾çš„æ ‡å¿—å¤´ï¼Œ
+      可在`{{}}`中使用任意规则（正则除外？），默认为js，使用其他规则需要有明显的标志头，
 
-      å¦‚ï¼šDefaultè§„åˆ™éœ€è¦ä»¥`@@`å¼€å¤´ï¼ŒXPathéœ€è¦ä»¥`@xpath:`æˆ–`//`å¼€å¤´ï¼ŒJSONPathéœ€è¦ä»¥`@json:`æˆ–`$.`å¼€å¤´ï¼ŒCSSéœ€è¦ä»¥`@css:`å¼€å¤´
+      如：Default规则需要以`@@`开头，XPath需要以`@xpath:`或`//`开头，JSONPath需要以`@json:`或`$.`开头，CSS需要以`@css:`开头
 
-    - `{}`è§„åˆ™
+    - `{}`规则
 
-      ç•™ç”¨äº†é˜…è¯»2.0çš„è§„åˆ™ï¼Œåªèƒ½ä½¿ç”¨JSONPathï¼Œå°½é‡é¿å…ä½¿ç”¨
+      留用了阅读2.0的规则，只能使用JSONPath，尽量避免使用
 
-  + è‡ªå®šä¹‰jsæ–¹æ³•
+  + 自定义js方法
 
     ```
-    //å½“å‰é¡µçš„responseBody
+    //当前页的responseBody
     result
     
-    //å½“å‰é¡µçš„URL
+    //当前页的URL
     baseUrl
     
-    //è¾“å…¥urlStrèŽ·å–ç½‘é¡µå†…å®¹ï¼Œè¿”å›žç±»åž‹String?
+    //输入urlStr获取网页内容，返回类型String?
     java.ajax(urlStr: String)
     
-    //æ ¼å¼åŒ–æ—¶é—´æˆ³ï¼Œè¿”å›žç±»åž‹String
+    //格式化时间戳，返回类型String
     java.timeFormat(timestamp: Long)
     
-    //base64è§£ç ï¼Œè¿”å›žç±»åž‹String
+    //base64解码，返回类型String
     java.base64Decode(str: String)
-    //java.base64Decode(str: String, flags: Int)	//æœªå¯ç”¨
+    //java.base64Decode(str: String, flags: Int)	//未启用
         
-    //base64ç¼–ç ï¼Œè¿”å›žç±»åž‹String?
+    //base64编码，返回类型String?
     java.base64Encode(str: String)
     java.base64Encode(str: String, flags: Int)
         
-    //md5ç¼–ç ï¼Œè¿”å›žç±»åž‹String?
+    //md5编码，返回类型String?
     java.md5Encode(str: String)
     java.md5Encode16(str: String)
     
-    /**************ä»¥ä¸‹éƒ¨åˆ†æ–¹æ³•ç”±äºŽJAVAä¸æ”¯æŒå‚æ•°é»˜è®¤å€¼ï¼Œè°ƒç”¨æ—¶ä¸èƒ½çœç•¥***************/
-    //è®¾ç½®éœ€è§£æžçš„å†…å®¹contentå’ŒbaseUrlï¼Œè¿”å›žç±»åž‹AnalyzeRule
+    /**************以下部分方法由于JAVA不支持参数默认值，调用时不能省略***************/
+    //设置需解析的内容content和baseUrl，返回类型AnalyzeRule
     java.setContent(content: Any?, baseUrl: String? = this.baseUrl)
     
-    //è¾“å…¥è§„åˆ™ruleå’ŒURLæ ‡å¿—isUrlèŽ·å–æ–‡æœ¬åˆ—è¡¨ï¼Œè¿”å›žç±»åž‹List<String>?
+    //输入规则rule和URL标志isUrl获取文本列表，返回类型List<String>?
     java.getStringList(rule: String, isUrl: Boolean = false)
     
-    //è¾“å…¥è§„åˆ™ruleå’ŒURLæ ‡å¿—isUrlèŽ·å–æ–‡æœ¬ï¼Œè¿”å›žç±»åž‹String
+    //输入规则rule和URL标志isUrl获取文本，返回类型String
     java.getString(ruleStr: String?, isUrl: Boolean = false)
     
-    //è¾“å…¥è§„åˆ™ruleStrèŽ·å–èŠ‚ç‚¹åˆ—è¡¨ï¼Œè¿”å›žç±»åž‹List<Any>
+    //输入规则ruleStr获取节点列表，返回类型List<Any>
     java.getElements(ruleStr: String)
     ```
 
 
-### 3ã€ä¹¦æºä¹‹ã€ŒåŸºæœ¬ã€
-  + ä¹¦æºURL(bookSourceUrl)
-    - å¿…å¡«
-    - å”¯ä¸€æ ‡è¯†ï¼Œä¸å¯é‡å¤
-    - ä¸Žå…¶ä»–æºç›¸åŒä¼šè¦†ç›–
-  + ä¹¦æºåç§°(bookSourceName)
-    - å¿…å¡«
-    - åå­—å¯é‡å¤
-+ ä¹¦æºåˆ†ç»„(bookSourceGroup)
-  - å¯ä¸å¡«
-  - ç”¨äºŽæ•´ç†æº
-  + ç™»å½•URL(loginUrl)
+### 3、书源之「基本」
+  + 书源URL(bookSourceUrl)
+    - 必填
+    - 唯一标识，不可重复
+    - 与其他源相同会覆盖
+  + 书源名称(bookSourceName)
+    - 必填
+    - 名字可重复
++ 书源分组(bookSourceGroup)
+  - 可不填
+  - 用于整理源
+  + 登录URL(loginUrl)
     
-    - å¯ä¸å¡«
+    - 可不填
     
-    - ç”¨äºŽç™»å½•ä¸ªäººè´¦æˆ·
+    - 用于登录个人账户
     
-  + ä¹¦ç±URLæ­£åˆ™(bookUrlPattern)
+  + 书籍URL正则(bookUrlPattern)
     
-    - å¯ä¸å¡«
+    - 可不填
     
-    - æ·»åŠ ç½‘å€æ—¶ï¼Œç”¨äºŽè¯†åˆ«ä¹¦æº
+    - 添加网址时，用于识别书源
     
     - ```
-      ä¾‹:https?://www.piaotian.com/bookinfo/.*
+      例:https?://www.piaotian.com/bookinfo/.*
       ```
     
-  + è¯·æ±‚å¤´(header)
-    - å¯ä¸å¡«
-    - è®¿é—®ç½‘å€æ—¶ä½¿ç”¨
+  + 请求头(header)
+    - 可不填
+    - 访问网址时使用
     
-### 4ã€ä¹¦æºä¹‹ã€Œæœç´¢ã€
-  - æœç´¢åœ°å€(url)
+### 4、书源之「搜索」
+  - 搜索地址(url)
 
-    - `key`ä¸ºå…³é”®å­—æ ‡è¯†ï¼Œé€šå¸¸å½¢æ€ä¸º`{{key}}`ï¼Œè¿è¡Œæ—¶ä¼šæ›¿æ¢ä¸ºæœç´¢å…³é”®å­—
+    - `key`为关键字标识，通常形态为`{{key}}`，运行时会替换为搜索关键字
 
-      ä¹Ÿå¯ä»¥å¯¹keyè¿›è¡ŒåŠ å¯†ç­‰æ“ä½œï¼Œå¦‚ï¼š`{{java.base64Encode(key)}}`
+      也可以对key进行加密等操作，如：`{{java.base64Encode(key)}}`
 
-    - `page`ä¸ºå…³é”®å­—æ ‡è¯†ï¼Œé€šå¸¸å½¢æ€ä¸º`{{page}}`ï¼Œpageçš„åˆå€¼ä¸º1ä¹Ÿå¯ä»¥å¯¹pageè¿›è¡Œè®¡ç®—ï¼Œ
+    - `page`为关键字标识，通常形态为`{{page}}`，page的初值为1也可以对page进行计算，
 
-      å¦‚ï¼š`{{(page-1)*20}}`ï¼Œæœ‰æ—¶ä¼šé‡åˆ°ç¬¬ä¸€é¡µæ²¡æœ‰é¡µæ•°çš„æƒ…å†µï¼Œæœ‰ä¸¤ç§æ–¹æ³•ï¼š
+      如：`{{(page-1)*20}}`，有时会遇到第一页没有页数的情况，有两种方法：
 
-      â‘  `{{page - 1 == 0 ? "": page}}`  
+      ① `{{page - 1 == 0 ? "": page}}`  
 
-      â‘¡ `<,{{page}}>`
+      ② `<,{{page}}>`
 
-    - æ”¯æŒç›¸å¯¹URL
+    - 支持相对URL
 
-  - ä¹¦ç±åˆ—è¡¨è§„åˆ™(bookList)
+  - 书籍列表规则(bookList)
 
-  - ä¹¦åè§„åˆ™(name)
-  + ä½œè€…è§„åˆ™(author)
-  + åˆ†ç±»è§„åˆ™(kind)
-  + å­—æ•°è§„åˆ™(wordCount)
-  + æœ€æ–°ç« èŠ‚è§„åˆ™(lastChapter)
-  + ç®€ä»‹è§„åˆ™(intro)
-  + å°é¢è§„åˆ™(coverUrl)
-  + è¯¦æƒ…é¡µurlè§„åˆ™(bookUrl)
+  - 书名规则(name)
+  + 作者规则(author)
+  + 分类规则(kind)
+  + 字数规则(wordCount)
+  + 最新章节规则(lastChapter)
+  + 简介规则(intro)
+  + 封面规则(coverUrl)
+  + 详情页url规则(bookUrl)
 
-### 5ã€ä¹¦æºä¹‹ã€Œå‘çŽ°ã€
+### 5、书源之「发现」
 
-  - å‘çŽ°åœ°å€è§„åˆ™(url)
+  - 发现地址规则(url)
 
-    - `page`ä¸ºå…³é”®å­—æ ‡è¯†ï¼Œé€šå¸¸å½¢æ€ä¸º`{{page}}`ï¼Œpageçš„åˆå€¼ä¸º1ï¼Œä¹Ÿå¯ä»¥å¯¹pageè¿›è¡Œè®¡ç®—ï¼Œ
+    - `page`为关键字标识，通常形态为`{{page}}`，page的初值为1，也可以对page进行计算，
 
-      å¦‚ï¼š`{{(page-1)*20}}`ï¼Œæœ‰æ—¶ä¼šé‡åˆ°ç¬¬ä¸€é¡µæ²¡æœ‰é¡µæ•°çš„æƒ…å†µï¼Œæœ‰ä¸¤ç§æ–¹æ³•ï¼š
+      如：`{{(page-1)*20}}`，有时会遇到第一页没有页数的情况，有两种方法：
 
-      â‘  `{{page - 1 == 0 ? "": page}}`  
+      ① `{{page - 1 == 0 ? "": page}}`  
 
-      â‘¡ `<,{{page}}>`
+      ② `<,{{page}}>`
 
-    - å‘çŽ°URLå¯ä½¿ç”¨`&&`æˆ–æ¢è¡Œç¬¦éš”å¼€
+    - 发现URL可使用`&&`或换行符隔开
 
-    - æ”¯æŒç›¸å¯¹URL
+    - 支持相对URL
 
-  - ä¹¦ç±åˆ—è¡¨è§„åˆ™(bookList)
+  - 书籍列表规则(bookList)
 
-  - ä¹¦åè§„åˆ™(name)
+  - 书名规则(name)
 
-  + ä½œè€…è§„åˆ™(author)
-  + åˆ†ç±»è§„åˆ™(kind)
-  + å­—æ•°è§„åˆ™(wordCount)
-  + æœ€æ–°ç« èŠ‚è§„åˆ™(lastChapter)
-  + ç®€ä»‹è§„åˆ™(intro)
-  + å°é¢è§„åˆ™(coverUrl)
-  + è¯¦æƒ…é¡µurlè§„åˆ™(bookUrl)
+  + 作者规则(author)
+  + 分类规则(kind)
+  + 字数规则(wordCount)
+  + 最新章节规则(lastChapter)
+  + 简介规则(intro)
+  + 封面规则(coverUrl)
+  + 详情页url规则(bookUrl)
 
-### 6ã€ä¹¦æºä¹‹ã€Œè¯¦æƒ…ã€
+### 6、书源之「详情」
 
-  - é¢„å¤„ç†è§„åˆ™(bookInfoInit)
+  - 预处理规则(bookInfoInit)
 
-    - åªèƒ½ä½¿ç”¨æ­£åˆ™ä¹‹AllInOneæˆ–è€…js
+    - 只能使用正则之AllInOne或者js
 
-    - æ­£åˆ™ä¹‹AllInOneå¿…é¡»ä»¥`:`å¼€å¤´
+    - 正则之AllInOne必须以`:`开头
 
-    - jsçš„è¿”å›žå€¼éœ€è¦æ˜¯jsonå¯¹è±¡ï¼Œä¾‹ï¼š
+    - js的返回值需要是json对象，例：
 
       ```
       <js>
       (function(){
       	return {
-      		a:"åœ£å¢Ÿ",
-      		b:"è¾°ä¸œ",
-      		c:"çŽ„å¹»",
-      		d:"200ä¸‡å­—",
-      		e:"ç¬¬ä¸¤åƒç«  è¾°ä¸œè‚¾è™š",
-      		f:"åœ¨ç ´è´¥ä¸­å´›èµ·ï¼Œåœ¨å¯‚ç­ä¸­å¤è‹ã€‚æ²§æµ·æˆå°˜ï¼Œé›·ç”µæž¯ç«­...",
+      		a:"圣墟",
+      		b:"辰东",
+      		c:"玄幻",
+      		d:"200万字",
+      		e:"第两千章 辰东肾虚",
+      		f:"在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭...",
       		g:"https://bookcover.yuewen.com/qdbimg/349573/1004608738/300
       ",
       		h:"https://m.qidian.com/book/1004608738"
@@ -384,45 +384,45 @@
       </js>
       ```
       
-      æ­¤æ—¶ï¼Œä¹¦åè§„åˆ™å¡«`a`ï¼Œä½œè€…è§„åˆ™å¡«`b`ï¼Œåˆ†ç±»è§„åˆ™å¡«`c`ï¼Œå­—æ•°è§„åˆ™å¡«`d`ï¼Œæœ€æ–°ç« èŠ‚è§„åˆ™å¡«`e`ï¼Œç®€ä»‹è§„åˆ™`f`ï¼Œå°é¢è§„åˆ™å¡«`g`ï¼Œç›®å½•URLè§„åˆ™å¡«`h`
+      此时，书名规则填`a`，作者规则填`b`，分类规则填`c`，字数规则填`d`，最新章节规则填`e`，简介规则`f`，封面规则填`g`，目录URL规则填`h`
     
-  - ä¹¦åè§„åˆ™(name)
+  - 书名规则(name)
 
-  + ä½œè€…è§„åˆ™(author)
-  + åˆ†ç±»è§„åˆ™(kind)
-  + å­—æ•°è§„åˆ™(wordCount)
-  + æœ€æ–°ç« èŠ‚è§„åˆ™(lastChapter)
-  + ç®€ä»‹è§„åˆ™(intro)
-  + å°é¢è§„åˆ™(coverUrl)
+  + 作者规则(author)
+  + 分类规则(kind)
+  + 字数规则(wordCount)
+  + 最新章节规则(lastChapter)
+  + 简介规则(intro)
+  + 封面规则(coverUrl)
 
-  + ç›®å½•URLè§„åˆ™(tocUrl)
+  + 目录URL规则(tocUrl)
 
-### 7ã€ä¹¦æºä¹‹ã€Œç›®å½•ã€
-  - ç›®å½•åˆ—è¡¨è§„åˆ™(chapterList)
+### 7、书源之「目录」
+  - 目录列表规则(chapterList)
     
-    - é¦–å­—ç¬¦ä½¿ç”¨è´Ÿå·(`-`)å¯ä½¿åˆ—è¡¨ååº
-  - ç« èŠ‚åç§°è§„åˆ™(ruleChapterName)
-  - ç« èŠ‚URLè§„åˆ™(chapterUrl)
-  - VIPæ ‡è¯†(isVip)
+    - 首字符使用负号(`-`)可使列表反序
+  - 章节名称规则(ruleChapterName)
+  - 章节URL规则(chapterUrl)
+  - VIP标识(isVip)
     
-    - å½“ç»“æžœä¸º`null` `false` `0` `""`æ—¶ä¸ºéžVIP
-  - ç« èŠ‚ä¿¡æ¯(ChapterInfo)
+    - 当结果为`null` `false` `0` `""`时为非VIP
+  - 章节信息(ChapterInfo)
     
-    - å¯è°ƒç”¨java.timeFormat(timestamp: Long)å°†æ—¶é—´æˆ³è½¬ä¸ºyyyy/MM/dd HH:mmæ ¼å¼çš„æ—¶é—´
-  - ç›®å½•ä¸‹ä¸€é¡µè§„åˆ™(nextTocUrl)   
+    - 可调用java.timeFormat(timestamp: Long)将时间戳转为yyyy/MM/dd HH:mm格式的时间
+  - 目录下一页规则(nextTocUrl)   
     
-    - å¯è¿”å›žlistæˆ–è€…string
-    - jsä¸­è¿”å›ž `[]`æˆ– `null`æˆ– `""`æ—¶åœæ­¢åŠ è½½ä¸‹ä¸€é¡µ
+    - 可返回list或者string
+    - js中返回 `[]`或 `null`或 `""`时停止加载下一页
 
 
-### 8ã€ä¹¦æºä¹‹ã€Œæ­£æ–‡ã€
-  + æ­£æ–‡è§„åˆ™(content)
+### 8、书源之「正文」
+  + 正文规则(content)
 
-    - å¦‚ä¸‹ç¤ºä¾‹ï¼Œåœ¨è¯¦æƒ…é¡µ(ç›®å½•é¡µ)å’Œæ­£æ–‡ä½¿ç”¨webViewåŠ è½½ï¼Œä¾‹ï¼š
+    - 如下示例，在详情页(目录页)和正文使用webView加载，例：
 
       ```
       {
-        "bookSourceName": "çŒ«è€³FM",
+        "bookSourceName": "猫耳FM",
         "bookSourceType": 1,
         "bookSourceUrl": "https://www.missevan.com",
         "customOrder": 0,
@@ -441,24 +441,24 @@
 
       
 
-  + æ­£æ–‡ä¸‹ä¸€é¡µURLè§„åˆ™(nextContentUrl)
+  + 正文下一页URL规则(nextContentUrl)
 
   + webJs
     
-    - ç”¨äºŽæ¨¡æ‹Ÿé¼ æ ‡ç‚¹å‡»ç­‰æ“ä½œï¼Œå¿…é¡»æœ‰è¿”å›žå€¼ï¼Œè¿”å›žå€¼ä¼šç”¨äºŽèµ„æºæ­£åˆ™æˆ–æ­£æ–‡ä¸­
-    - ä¸¾ä¸ªæ —å­ï¼Œåœ¨webJsä¸­æ‰§è¡Œäº†`getDecode()`ï¼Œä½¿æ­£æ–‡éƒ¨åˆ†è§£å¯†ï¼š
+    - 用于模拟鼠标点击等操作，必须有返回值，返回值会用于资源正则或正文中
+    - 举个栗子，在webJs中执行了`getDecode()`，使正文部分解密：
 
     ```
       {
-        "bookSourceGroup": "é˜…è¯»3.0ä¹¦æºåˆé›†",
-        "bookSourceName": "ðŸ”¥æ–‹ä¹¦è‹‘",
+        "bookSourceGroup": "阅读3.0书源合集",
+        "bookSourceName": "🔥斋书苑",
         "bookSourceType": 0,
         "bookSourceUrl": "https://www.zhaishuyuan.com",
         "bookUrlPattern": "",
         "customOrder": 11,
         "enabled": false,
         "enabledExplore": false,
-        "exploreUrl": "ç”·ç”Ÿä¹¦åº“::/shuku/0_1_0_0_0_{{page}}_0_0\nç”·é¢‘è¿žè½½::/shuku/0_2_0_0_0_{{page}}_0_0\nç”·é¢‘å®Œç»“::/shuku/0_3_0_0_0_{{page}}_0_0\næ·»åŠ æ—¶é—´::/shuku/0_1_0_0_8_{{page}}_0_0\næ€»ç‚¹å‡»æ¦œ::/shuku/0_1_0_0_2_{{page}}_0_0\næœˆç‚¹å‡»æ¦œ::/shuku/0_1_0_0_5_{{page}}_0_0\nå‘¨ç‚¹å‡»æ¦œ::/shuku/0_1_0_0_4_{{page}}_0_0\næ€»æŽ¨èæ¦œ::/shuku/0_1_0_0_1_{{page}}_0_0\næœˆæŽ¨èæ¦œ::/shuku/0_1_0_0_7_{{page}}_0_0\nå‘¨æŽ¨èæ¦œ::/shuku/0_1_0_0_6_{{page}}_0_0\næ€»æ”¶è—æ¦œ::/shuku/0_1_0_0_3_{{page}}_0_0\næ€»å­—æ•°æ¦œ::/shuku/0_1_0_0_9_{{page}}_0_0\nçŽ„å¹»å¥‡å¹»::/shuku/1_1_0_0_0_{{page}}_0_0\nä¸œæ–¹çŽ„å¹»::/shuku/1_1_0_11_0_{{page}}_0_0\nå¼‚ä¸–å¤§é™†::/shuku/1_1_0_12_0_{{page}}_0_0\nå²è¯—å¥‡å¹»::/shuku/1_1_0_13_0_{{page}}_0_0\nå¼‚ç±»å…½æ—::/shuku/1_1_0_14_0_{{page}}_0_0\nåŽ†å²ç¥žè¯::/shuku/1_1_0_15_0_{{page}}_0_0\nçŽ‹æœäº‰éœ¸::/shuku/1_1_0_16_0_{{page}}_0_0\né«˜æ­¦ä¸–ç•Œ::/shuku/1_1_0_17_0_{{page}}_0_0\nå‰‘ä¸Žé­”æ³•::/shuku/1_1_0_18_0_{{page}}_0_0\näºŒæ¬¡å…ƒã€€::/shuku/1_1_0_19_0_{{page}}_0_0\næ­¦ä¾ ä»™ä¾ ::/shuku/2_1_0_0_0_{{page}}_0_0\nå¤å…¸ä»™ä¾ ::/shuku/2_1_0_21_0_{{page}}_0_0\nä¿®çœŸæ–‡æ˜Ž::/shuku/2_1_0_22_0_{{page}}_0_0\nçŽ°ä»£ä¿®çœŸ::/shuku/2_1_0_23_0_{{page}}_0_0\nç¥žè¯ä¿®çœŸ::/shuku/2_1_0_24_0_{{page}}_0_0\nä¼ ç»Ÿæ­¦ä¾ ::/shuku/2_1_0_25_0_{{page}}_0_0\næµªå­å¼‚ä¾ ::/shuku/2_1_0_26_0_{{page}}_0_0\nå›½æœ¯æ­¦æŠ€::/shuku/2_1_0_27_0_{{page}}_0_0\næ­¦ä¾ å¹»æƒ³::/shuku/2_1_0_28_0_{{page}}_0_0\nå¹»æƒ³ä¿®ä»™::/shuku/2_1_0_29_0_{{page}}_0_0\néƒ½å¸‚é’æ˜¥::/shuku/3_1_0_0_0_{{page}}_0_0\néƒ½å¸‚ç”Ÿæ´»::/shuku/3_1_0_31_0_{{page}}_0_0\nå®˜åœºæ²‰æµ®::/shuku/3_1_0_32_0_{{page}}_0_0\nå¨±ä¹æ˜Žæ˜Ÿ::/shuku/3_1_0_33_0_{{page}}_0_0\nä¹¡åœŸå°è¯´::/shuku/3_1_0_34_0_{{page}}_0_0\nå¼‚æœ¯è¶…èƒ½::/shuku/3_1_0_35_0_{{page}}_0_0\nçŽ°å®žç™¾æ€::/shuku/3_1_0_36_0_{{page}}_0_0\næ ¡å›­é’æ˜¥::/shuku/3_1_0_37_0_{{page}}_0_0\nåŽ†å²å†›äº‹::/shuku/4_1_0_0_0_{{page}}_0_0\næž¶ç©ºåŽ†å²::/shuku/4_1_0_41_0_{{page}}_0_0\nä¸Šå¤å…ˆç§¦::/shuku/4_1_0_42_0_{{page}}_0_0\nç§¦æ±‰ä¸‰å›½::/shuku/4_1_0_43_0_{{page}}_0_0\nä¸¤æ™‹éš‹å”::/shuku/4_1_0_44_0_{{page}}_0_0\näº”ä»£åå›½::/shuku/4_1_0_45_0_{{page}}_0_0\nä¸¤å®‹å…ƒæ˜Ž::/shuku/4_1_0_46_0_{{page}}_0_0\næ¸…å²æ°‘å›½::/shuku/4_1_0_47_0_{{page}}_0_0\nå¤–å›½åŽ†å²::/shuku/4_1_0_48_0_{{page}}_0_0\nåŽ†å²ä¼ è®°::/shuku/4_1_0_49_0_{{page}}_0_0\nå†›äº‹æˆ˜äº‰::/shuku/4_1_0_410_0_{{page}}_0_0\næŠ—æˆ˜çƒ½ç«::/shuku/4_1_0_411_0_{{page}}_0_0\næˆ˜äº‰å¹»æƒ³::/shuku/4_1_0_412_0_{{page}}_0_0\nç§‘å¹»çµå¼‚::/shuku/5_1_0_0_0_{{page}}_0_0\næœªæ¥ä¸–ç•Œ::/shuku/5_1_0_51_0_{{page}}_0_0\næ˜Ÿé™…æ–‡æ˜Ž::/shuku/5_1_0_52_0_{{page}}_0_0\nå®‡å®™ç»ƒåŠŸ::/shuku/5_1_0_53_0_{{page}}_0_0\nè¶…çº§ç§‘æŠ€::/shuku/5_1_0_54_0_{{page}}_0_0\næ—¶ç©ºç©¿æ¢­::/shuku/5_1_0_55_0_{{page}}_0_0\nè¿›åŒ–å˜å¼‚::/shuku/5_1_0_56_0_{{page}}_0_0\næœ«ä¸–å±æœº::/shuku/5_1_0_57_0_{{page}}_0_0\nçµå¼‚é¬¼æ€ª::/shuku/5_1_0_58_0_{{page}}_0_0\nææ€–æƒŠæ‚š::/shuku/5_1_0_59_0_{{page}}_0_0\næ‚¬ç–‘ä¾¦æŽ¢::/shuku/5_1_0_510_0_{{page}}_0_0\nå¯»å¢“æŽ¢é™©::/shuku/5_1_0_511_0_{{page}}_0_0\né£Žæ°´ç§˜æœ¯::/shuku/5_1_0_512_0_{{page}}_0_0\næ¸¸æˆç«žæŠ€::/shuku/6_1_0_0_0_{{page}}_0_0\nè™šæ‹Ÿç½‘æ¸¸::/shuku/6_1_0_61_0_{{page}}_0_0\næ¸¸æˆå¼‚ç•Œ::/shuku/6_1_0_61_0_{{page}}_0_0\nä½“è‚²ç«žæŠ€::/shuku/6_1_0_61_0_{{page}}_0_0\næ¸¸æˆç”Ÿæ¶¯::/shuku/6_1_0_61_0_{{page}}_0_0\nç”µå­ç«žæŠ€::/shuku/6_1_0_61_0_{{page}}_0_0\nå¼ˆæž—æ˜¥ç§‹::/shuku/6_1_0_61_0_{{page}}_0_0\nå¥³ç”Ÿä¹¦åº“::/shuku/9_1_0_0_0_{{page}}_0_0\nå¥³é¢‘è¿žè½½::/shuku/9_2_0_0_0_{{page}}_0_0\nå¥³é¢‘å®Œç»“::/shuku/9_3_0_0_0_{{page}}_0_0\næ·»åŠ æ—¶é—´::/shuku/9_1_0_0_8_{{page}}_0_0\næ€»ç‚¹å‡»æ¦œ::/shuku/9_1_0_0_2_{{page}}_0_0\næœˆç‚¹å‡»æ¦œ::/shuku/9_1_0_0_5_{{page}}_0_0\nå‘¨ç‚¹å‡»æ¦œ::/shuku/9_1_0_0_4_{{page}}_0_0\næ€»æŽ¨èæ¦œ::/shuku/9_1_0_0_1_{{page}}_0_0\næœˆæŽ¨èæ¦œ::/shuku/9_1_0_0_7_{{page}}_0_0\nå‘¨æŽ¨èæ¦œ::/shuku/9_1_0_0_6_{{page}}_0_0\næ€»æ”¶è—æ¦œ::/shuku/9_1_0_0_3_{{page}}_0_0\næ€»å­—æ•°æ¦œ::/shuku/9_1_0_0_9_{{page}}_0_0\nè±ªé—¨æ€»è£::/shuku/9_1_0_91_0_{{page}}_0_0\néƒ½å¸‚ç”Ÿæ´»::/shuku/9_1_0_92_0_{{page}}_0_0\né’æ˜¥æ ¡å›­::/shuku/9_1_0_93_0_{{page}}_0_0\néƒ½å¸‚å¼‚èƒ½::/shuku/9_1_0_94_0_{{page}}_0_0\næ˜Ÿé™…ç§‘å¹»::/shuku/9_1_0_95_0_{{page}}_0_0\næ¸¸æˆç«žæŠ€::/shuku/9_1_0_96_0_{{page}}_0_0\nçµå¼‚æŽ¨ç†::/shuku/9_1_0_97_0_{{page}}_0_0\nå©šæ‹æƒ…ç¼˜::/shuku/9_1_0_98_0_{{page}}_0_0\nå®˜åœºæ²‰æµ®::/shuku/9_1_0_99_0_{{page}}_0_0\nå¨±ä¹æ˜Žæ˜Ÿ::/shuku/9_1_0_910_0_{{page}}_0_0\nç©¿è¶Šæž¶ç©º::/shuku/9_1_0_911_0_{{page}}_0_0\nç»å•†ç§ç”°::/shuku/9_1_0_912_0_{{page}}_0_0\nçŽ„å¹»ä»™ä¾ ::/shuku/9_1_0_913_0_{{page}}_0_0\nåŽ†å²å†›äº‹::/shuku/9_1_0_914_0_{{page}}_0_0\nå®«é—±å®…æ–—::/shuku/9_1_0_915_0_{{page}}_0_0\né‡ç”Ÿå¤ä»‡::/shuku/9_1_0_916_0_{{page}}_0_0\nè±ªé—¨æ©æ€¨::/shuku/9_1_0_917_0_{{page}}_0_0",
+        "exploreUrl": "男生书库::/shuku/0_1_0_0_0_{{page}}_0_0\n男频连载::/shuku/0_2_0_0_0_{{page}}_0_0\n男频完结::/shuku/0_3_0_0_0_{{page}}_0_0\n添加时间::/shuku/0_1_0_0_8_{{page}}_0_0\n总点击榜::/shuku/0_1_0_0_2_{{page}}_0_0\n月点击榜::/shuku/0_1_0_0_5_{{page}}_0_0\n周点击榜::/shuku/0_1_0_0_4_{{page}}_0_0\n总推荐榜::/shuku/0_1_0_0_1_{{page}}_0_0\n月推荐榜::/shuku/0_1_0_0_7_{{page}}_0_0\n周推荐榜::/shuku/0_1_0_0_6_{{page}}_0_0\n总收藏榜::/shuku/0_1_0_0_3_{{page}}_0_0\n总字数榜::/shuku/0_1_0_0_9_{{page}}_0_0\n玄幻奇幻::/shuku/1_1_0_0_0_{{page}}_0_0\n东方玄幻::/shuku/1_1_0_11_0_{{page}}_0_0\n异世大陆::/shuku/1_1_0_12_0_{{page}}_0_0\n史诗奇幻::/shuku/1_1_0_13_0_{{page}}_0_0\n异类兽族::/shuku/1_1_0_14_0_{{page}}_0_0\n历史神话::/shuku/1_1_0_15_0_{{page}}_0_0\n王朝争霸::/shuku/1_1_0_16_0_{{page}}_0_0\n高武世界::/shuku/1_1_0_17_0_{{page}}_0_0\n剑与魔法::/shuku/1_1_0_18_0_{{page}}_0_0\n二次元　::/shuku/1_1_0_19_0_{{page}}_0_0\n武侠仙侠::/shuku/2_1_0_0_0_{{page}}_0_0\n古典仙侠::/shuku/2_1_0_21_0_{{page}}_0_0\n修真文明::/shuku/2_1_0_22_0_{{page}}_0_0\n现代修真::/shuku/2_1_0_23_0_{{page}}_0_0\n神话修真::/shuku/2_1_0_24_0_{{page}}_0_0\n传统武侠::/shuku/2_1_0_25_0_{{page}}_0_0\n浪子异侠::/shuku/2_1_0_26_0_{{page}}_0_0\n国术武技::/shuku/2_1_0_27_0_{{page}}_0_0\n武侠幻想::/shuku/2_1_0_28_0_{{page}}_0_0\n幻想修仙::/shuku/2_1_0_29_0_{{page}}_0_0\n都市青春::/shuku/3_1_0_0_0_{{page}}_0_0\n都市生活::/shuku/3_1_0_31_0_{{page}}_0_0\n官场沉浮::/shuku/3_1_0_32_0_{{page}}_0_0\n娱乐明星::/shuku/3_1_0_33_0_{{page}}_0_0\n乡土小说::/shuku/3_1_0_34_0_{{page}}_0_0\n异术超能::/shuku/3_1_0_35_0_{{page}}_0_0\n现实百态::/shuku/3_1_0_36_0_{{page}}_0_0\n校园青春::/shuku/3_1_0_37_0_{{page}}_0_0\n历史军事::/shuku/4_1_0_0_0_{{page}}_0_0\n架空历史::/shuku/4_1_0_41_0_{{page}}_0_0\n上古先秦::/shuku/4_1_0_42_0_{{page}}_0_0\n秦汉三国::/shuku/4_1_0_43_0_{{page}}_0_0\n两晋隋唐::/shuku/4_1_0_44_0_{{page}}_0_0\n五代十国::/shuku/4_1_0_45_0_{{page}}_0_0\n两宋元明::/shuku/4_1_0_46_0_{{page}}_0_0\n清史民国::/shuku/4_1_0_47_0_{{page}}_0_0\n外国历史::/shuku/4_1_0_48_0_{{page}}_0_0\n历史传记::/shuku/4_1_0_49_0_{{page}}_0_0\n军事战争::/shuku/4_1_0_410_0_{{page}}_0_0\n抗战烽火::/shuku/4_1_0_411_0_{{page}}_0_0\n战争幻想::/shuku/4_1_0_412_0_{{page}}_0_0\n科幻灵异::/shuku/5_1_0_0_0_{{page}}_0_0\n未来世界::/shuku/5_1_0_51_0_{{page}}_0_0\n星际文明::/shuku/5_1_0_52_0_{{page}}_0_0\n宇宙练功::/shuku/5_1_0_53_0_{{page}}_0_0\n超级科技::/shuku/5_1_0_54_0_{{page}}_0_0\n时空穿梭::/shuku/5_1_0_55_0_{{page}}_0_0\n进化变异::/shuku/5_1_0_56_0_{{page}}_0_0\n末世危机::/shuku/5_1_0_57_0_{{page}}_0_0\n灵异鬼怪::/shuku/5_1_0_58_0_{{page}}_0_0\n恐怖惊悚::/shuku/5_1_0_59_0_{{page}}_0_0\n悬疑侦探::/shuku/5_1_0_510_0_{{page}}_0_0\n寻墓探险::/shuku/5_1_0_511_0_{{page}}_0_0\n风水秘术::/shuku/5_1_0_512_0_{{page}}_0_0\n游戏竞技::/shuku/6_1_0_0_0_{{page}}_0_0\n虚拟网游::/shuku/6_1_0_61_0_{{page}}_0_0\n游戏异界::/shuku/6_1_0_61_0_{{page}}_0_0\n体育竞技::/shuku/6_1_0_61_0_{{page}}_0_0\n游戏生涯::/shuku/6_1_0_61_0_{{page}}_0_0\n电子竞技::/shuku/6_1_0_61_0_{{page}}_0_0\n弈林春秋::/shuku/6_1_0_61_0_{{page}}_0_0\n女生书库::/shuku/9_1_0_0_0_{{page}}_0_0\n女频连载::/shuku/9_2_0_0_0_{{page}}_0_0\n女频完结::/shuku/9_3_0_0_0_{{page}}_0_0\n添加时间::/shuku/9_1_0_0_8_{{page}}_0_0\n总点击榜::/shuku/9_1_0_0_2_{{page}}_0_0\n月点击榜::/shuku/9_1_0_0_5_{{page}}_0_0\n周点击榜::/shuku/9_1_0_0_4_{{page}}_0_0\n总推荐榜::/shuku/9_1_0_0_1_{{page}}_0_0\n月推荐榜::/shuku/9_1_0_0_7_{{page}}_0_0\n周推荐榜::/shuku/9_1_0_0_6_{{page}}_0_0\n总收藏榜::/shuku/9_1_0_0_3_{{page}}_0_0\n总字数榜::/shuku/9_1_0_0_9_{{page}}_0_0\n豪门总裁::/shuku/9_1_0_91_0_{{page}}_0_0\n都市生活::/shuku/9_1_0_92_0_{{page}}_0_0\n青春校园::/shuku/9_1_0_93_0_{{page}}_0_0\n都市异能::/shuku/9_1_0_94_0_{{page}}_0_0\n星际科幻::/shuku/9_1_0_95_0_{{page}}_0_0\n游戏竞技::/shuku/9_1_0_96_0_{{page}}_0_0\n灵异推理::/shuku/9_1_0_97_0_{{page}}_0_0\n婚恋情缘::/shuku/9_1_0_98_0_{{page}}_0_0\n官场沉浮::/shuku/9_1_0_99_0_{{page}}_0_0\n娱乐明星::/shuku/9_1_0_910_0_{{page}}_0_0\n穿越架空::/shuku/9_1_0_911_0_{{page}}_0_0\n经商种田::/shuku/9_1_0_912_0_{{page}}_0_0\n玄幻仙侠::/shuku/9_1_0_913_0_{{page}}_0_0\n历史军事::/shuku/9_1_0_914_0_{{page}}_0_0\n宫闱宅斗::/shuku/9_1_0_915_0_{{page}}_0_0\n重生复仇::/shuku/9_1_0_916_0_{{page}}_0_0\n豪门恩怨::/shuku/9_1_0_917_0_{{page}}_0_0",
         "lastUpdateTime": 0,
         "loginUrl": "",
         "ruleBookInfo": "{\n  \"author\": \"@css:[property=og:novel:author]@content\",\n  \"coverUrl\": \"@css:[property=og:image]@content\",\n  \"intro\": \"@css:#bookintro@html\",\n  \"kind\": \"@css:[property=og:novel:category]@content\",\n  \"lastChapter\": \"@css:[property=og:novel:latest_chapter_name]@content\",\n  \"name\": \"@css:[property=og:novel:book_name]@content\",\n  \"tocUrl\": \"@css:[property=og:novel:read_url]@content\",\n  \"wordCount\": \"@css:.count li:eq(3)>span@text\"\n}",
@@ -471,23 +471,23 @@
       }
       ```
     
-  + èµ„æºæ­£åˆ™(sourceRegex)
+  + 资源正则(sourceRegex)
     
-    - ç”¨äºŽå—…æŽ¢
+    - 用于嗅探
     
-    - ä¸€èˆ¬æƒ…å†µä¸‹çš„æ— è„‘æ•™ç¨‹å¦‚ä¸‹ï¼¿Ï†( Â°-Â°)/ 
+    - 一般情况下的无脑教程如下＿φ( °-°)/ 
     
-      - ç« èŠ‚é“¾æŽ¥åŽé¢åŠ  `,{"webView":true}`Ù©(à¹‘â›á´—â›à¹‘)Û¶ï¼Œä¸è¦æ´’æ•·æ•·çš„å†™æˆ `tag.a@href,{"webView":true}`æˆ–`$.link,{"webView":true}`
-      - åœ¨æœ‰å—…æŽ¢åŠŸèƒ½çš„æµè§ˆå™¨ï¼ˆå¦‚ï¼šviaã€xæµè§ˆå™¨ç­‰ï¼‰ä¸­ï¼Œè¾“å…¥ç« èŠ‚é“¾æŽ¥ã€‚æ³¨æ„(ï½¡â€¢Ìï¸¿â€¢Ì€ï½¡) `åƒä¸‡åˆ«å¸¦,{"webView":true}` (â•¯ï¹â•°)b
-      - åª’ä½“å¼€å§‹æ’­æ”¾åŽä½¿ç”¨æµè§ˆå™¨çš„å—…æŽ¢åŠŸèƒ½ï¼ŒæŸ¥çœ‹èµ„æºçš„é“¾æŽ¥
-      - åœ¨èµ„æºæ­£åˆ™é‡Œå¡«å†™èµ„æºé“¾æŽ¥çš„æ­£åˆ™ï¼Œä¸€èˆ¬å†™`.*\.(mp3|mp4).*`è¿™ä¸ªå°±å¯ä»¥äº†
-      - æœ€åŽåœ¨æ­£æ–‡å¡«å†™ `<js>result</js>`ãƒ¾(@^â–½^@)ãƒŽ
+      - 章节链接后面加 `,{"webView":true}`٩(๑❛ᴗ❛๑)۶，不要洒敷敷的写成 `tag.a@href,{"webView":true}`或`$.link,{"webView":true}`
+      - 在有嗅探功能的浏览器（如：via、x浏览器等）中，输入章节链接。注意(｡•́︿•̀｡) `千万别带,{"webView":true}` (╯﹏╰)b
+      - 媒体开始播放后使用浏览器的嗅探功能，查看资源的链接
+      - 在资源正则里填写资源链接的正则，一般写`.*\.(mp3|mp4).*`这个就可以了
+      - 最后在正文填写 `<js>result</js>`ヾ(@^▽^@)ノ
     
-    - å¦‚ä¸‹ç¤ºä¾‹ï¼Œåœ¨æ­£æ–‡å—…æŽ¢mp3å’Œmp4çš„èµ„æºï¼š
+    - 如下示例，在正文嗅探mp3和mp4的资源：
     
       ```
       {
-        "bookSourceName": "çŒ«è€³FM",
+        "bookSourceName": "猫耳FM",
         "bookSourceType": 1,
         "bookSourceUrl": "https://www.missevan.com",
         "customOrder": 0,
@@ -506,63 +506,63 @@
     
       
     
-### 9ã€è¡¥å……è¯´æ˜Ž
+### 9、补充说明
 
-- æ˜¾ç¤ºjsçš„æŠ¥é”™ä¿¡æ¯
+- 显示js的报错信息
 
   ```
   (function(result){
       try{
-            // å¤„ç†result
+            // 处理result
             // ...
-            // å½“è¿”å›žç»“æžœä¸ºå­—ç¬¦ä¸²æ—¶
+            // 当返回结果为字符串时
             return result;
-            // å½“è¿”å›žç»“æžœä¸ºåˆ—è¡¨æ—¶
+            // 当返回结果为列表时
             return list;
       }
       catch(e){
-            // å½“è¿”å›žç»“æžœä¸ºå­—ç¬¦ä¸²æ—¶
+            // 当返回结果为字符串时
             return ""+e;
-            // å½“è¿”å›žç»“æžœä¸ºåˆ—è¡¨æ—¶
-            return [""+e];  //åˆ—è¡¨å¯¹åº”åç§°å¤„å¡«<js>""+result</js>æŸ¥çœ‹
+            // 当返回结果为列表时
+            return [""+e];  //列表对应名称处填<js>""+result</js>查看
       }
   })(result);
   ```
 
-- è¯·å–„ç”¨è°ƒè¯•åŠŸèƒ½
+- 请善用调试功能
 
-  - è°ƒè¯•æœç´¢
+  - 调试搜索
 
-    è¾“å…¥å…³é”®å­—ï¼Œå¦‚ï¼š`ç³»ç»Ÿ`
+    输入关键字，如：`系统`
 
-  - è°ƒè¯•å‘çŽ°
+  - 调试发现
 
-    è¾“å…¥å‘çŽ°URLï¼Œå¦‚ï¼š`æœˆç¥¨æ¦œ::https://www.qidian.com/rank/yuepiao?page={{page}}`
+    输入发现URL，如：`月票榜::https://www.qidian.com/rank/yuepiao?page={{page}}`
 
-  - è°ƒè¯•è¯¦æƒ…é¡µ
+  - 调试详情页
 
-    è¾“å…¥è¯¦æƒ…é¡µURLï¼Œå¦‚ï¼š`https://m.qidian.com/book/1015609210`
+    输入详情页URL，如：`https://m.qidian.com/book/1015609210`
     
-  - è°ƒè¯•ç›®å½•é¡µ
+  - 调试目录页
 
-    è¾“å…¥ç›®å½•é¡µURLï¼Œå¦‚ï¼š`++https://www.zhaishuyuan.com/read/30394`
+    输入目录页URL，如：`++https://www.zhaishuyuan.com/read/30394`
 
-  - è°ƒè¯•æ­£æ–‡é¡µ
+  - 调试正文页
 
-    è¾“å…¥æ­£æ–‡é¡µURLï¼Œå¦‚ï¼š`--https://www.zhaishuyuan.com/chapter/30394/20940996`
+    输入正文页URL，如：`--https://www.zhaishuyuan.com/chapter/30394/20940996`
 
-- æ— è„‘`{"webView":true}`å¾ˆæ–¹ä¾¿
+- 无脑`{"webView":true}`很方便
 
-- ç‰¹åˆ«æ³¨æ„ç”¨`JSON.stringify()`æ–¹æ³•æ—¶ï¼Œéœ€è¦ä¿è¯JSONå¯¹è±¡çš„valueéƒ½æ˜¯`JavaScript`çš„`String`ç±»åž‹(åœ¨é˜…è¯»3.0ä¸­)
+- 特别注意用`JSON.stringify()`方法时，需要保证JSON对象的value都是`JavaScript`的`String`类型(在阅读3.0中)
 
-- é™„ï¼š
+- 附：
 
-  - ä¹¦æºä¸€
+  - 书源一
 
     ```
     {
-      "bookSourceGroup": "CSS; æ­£åˆ™",
-      "bookSourceName": "ðŸ”¥å°è¯´2016",
+      "bookSourceGroup": "CSS; 正则",
+      "bookSourceName": "🔥小说2016",
       "bookSourceType": 0,
       "bookSourceUrl": "https://www.xiaoshuo2016.com",
       "bookUrlPattern": "",
@@ -573,7 +573,7 @@
       "lastUpdateTime": 0,
       "loginUrl": "",
       "ruleBookInfo": "{\n  \"author\": \"##:author\\\"[^\\\"]+\\\"([^\\\"]*)##$1###\",\n  \"coverUrl\": \"##og:image\\\"[^\\\"]+\\\"([^\\\"]*)##$1###\",\n  \"intro\": \"##:description\\\"[^\\\"]+\\\"([\\\\w\\\\W]*?)\\\"/##$1###\",\n  \"kind\": \"##:category\\\"[^\\\"]+\\\"([^\\\"]*)##$1###\",\n  \"lastChapter\": \"##_chapter_name\\\"[^\\\"]+\\\"([^\\\"]*)##$1###\",\n  \"name\": \"##:book_name\\\"[^\\\"]+\\\"([^\\\"]*)##$1###\",\n  \"tocUrl\": \"\"\n}",
-      "ruleContent": "{\n  \"content\": \"@css:.articleDiv p@textNodes##æœç´¢.*æ‰‹æœºè®¿é—®|ä¸€ç§’è®°ä½.*|.*é˜…è¯»ä¸‹è½½|<!\\\\[CDATA\\\\[|\\\\]\\\\]>\",\n  \"nextContentUrl\": \"\"\n}",
+      "ruleContent": "{\n  \"content\": \"@css:.articleDiv p@textNodes##搜索.*手机访问|一秒记住.*|.*阅读下载|<!\\\\[CDATA\\\\[|\\\\]\\\\]>\",\n  \"nextContentUrl\": \"\"\n}",
       "ruleExplore": "{}",
       "ruleSearch": "{\n  \"author\": \"@css:p:eq(2)>a@text\",\n  \"bookList\": \"@css:li.clearfix\",\n  \"bookUrl\": \"@css:.name>a@href\",\n  \"coverUrl\": \"@css:img@src\",\n  \"intro\": \"@css:.note.clearfix p@text\",\n  \"kind\": \"@css:.note_text,p:eq(4)@text\",\n  \"lastChapter\": \"@css:p:eq(3)@text\",\n  \"name\": \"@css:.name@text\"\n}",
       "ruleToc": "{\n  \"chapterList\": \"-:<li><a[^\\\"]+\\\"([^\\\"]*)\\\">([^<]*)\",\n  \"chapterName\": \"$2\",\n  \"chapterUrl\": \"$1\",\n  \"nextTocUrl\": \"\"\n}",
@@ -582,12 +582,12 @@
     }
     ```
 
-  - ä¹¦æºäºŒ
+  - 书源二
 
     ```
     {
-      "bookSourceGroup": "XPath; æ­£åˆ™",
-      "bookSourceName": "ðŸ”¥é‡‡å¢¨é˜æ‰‹æœºç‰ˆ",
+      "bookSourceGroup": "XPath; 正则",
+      "bookSourceName": "🔥采墨阁手机版",
       "bookSourceType": 0,
       "bookSourceUrl": "https://m.caimoge.com",
       "bookUrlPattern": "",
@@ -597,7 +597,7 @@
       "exploreUrl": "",
       "lastUpdateTime": 0,
       "loginUrl": "",
-      "ruleBookInfo": "{\n  \"author\": \"//*[@property=\\\"og:novel:author\\\"]/@content\",\n  \"coverUrl\": \"//*[@property=\\\"og:image\\\"]/@content\",\n  \"intro\": \"//*[@property=\\\"og:description\\\"]/@content\",\n  \"kind\": \"//*[@property=\\\"og:novel:category\\\"]/@content\",\n  \"lastChapter\": \"//*[@id=\\\"newlist\\\"]//li[1]/a/text()\",\n  \"name\": \"//*[@property=\\\"og:novel:book_name\\\"]/@content\",\n  \"tocUrl\": \"//a[text()=\\\"é˜…è¯»\\\"]/@href\"\n}",
+      "ruleBookInfo": "{\n  \"author\": \"//*[@property=\\\"og:novel:author\\\"]/@content\",\n  \"coverUrl\": \"//*[@property=\\\"og:image\\\"]/@content\",\n  \"intro\": \"//*[@property=\\\"og:description\\\"]/@content\",\n  \"kind\": \"//*[@property=\\\"og:novel:category\\\"]/@content\",\n  \"lastChapter\": \"//*[@id=\\\"newlist\\\"]//li[1]/a/text()\",\n  \"name\": \"//*[@property=\\\"og:novel:book_name\\\"]/@content\",\n  \"tocUrl\": \"//a[text()=\\\"阅读\\\"]/@href\"\n}",
       "ruleContent": "{\n  \"content\": \"//*[@id=\\\"content\\\"]\",\n  \"nextContentUrl\": \"\"\n}",
       "ruleExplore": "{}",
       "ruleSearch": "{\n  \"author\": \"//dd[2]/text()\",\n  \"bookList\": \"//*[@id=\\\"sitebox\\\"]/dl\",\n  \"bookUrl\": \"//dt/a/@href\",\n  \"coverUrl\": \"//img/@src\",\n  \"kind\": \"//dd[2]/span/text()\",\n  \"lastChapter\": \"\",\n  \"name\": \"//h3/a/text()\"\n}",
@@ -607,12 +607,12 @@
     }
     ```
 
-  - ä¹¦æºä¸‰
+  - 书源三
 
     ```
     {
       "bookSourceGroup": "JSon",
-      "bookSourceName": "çŒŽé¹°å°è¯´ç½‘",
+      "bookSourceName": "猎鹰小说网",
       "bookSourceType": 0,
       "bookSourceUrl": "http://api.book.lieying.cn",
       "customOrder": 0,
@@ -629,5 +629,4 @@
       "weight": 0
     }
     ```
-
 
