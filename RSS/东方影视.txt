@@ -1,0 +1,19 @@
+[{
+  "customOrder": 0,
+  "enableJs": true,
+  "enabled": true,
+  "loadWithBaseUrl": true,
+  "ruleArticles": "class.box movie2_list@ul@li",
+  "ruleContent": "<js>\neval(function(p,a,c,k,e,d){e=function(c){return(c<a?\"\":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\\\b'+e(c)+'\\\\b','g'),k[c]);return p;}('1 3=0.2(0.6()*7)+\".4.5\";',8,8,'Math|var|floor|HOST|alicdnxvod|com|random|10000'.split('|'),0,{}));\nhosts=HOST;\nvid=result.match(/HOST\\+ \"([^\"]+)\"/)[1];\nimg=result.match(/poster : '([^\"]+)',/)[1];\nvideo='https://'+hosts+vid;\r\nvar mun=java.ajax(\"http://m.ixuani.cn/v/\");\r\nvar result=\"<video src=\\\"\"+video+\"\\\" width=\\\"100%\\\" height=\\\"285px\\\" controls=\\\"controls\\\"  poster=\\\"\"+img+\"\\\"></video></br><p style=\\\"color:\\#00ff00\\;font-size:20px\\\">\"+mun+\"</p>\";\n\n\"<html><head><meta charset=\\\"utf-8\\\"><title>东方影视</title><style>body\\{background-color:\\#ffffff\\}</style></head>\"+ \"<body>\"+result+\"</body></html>\"\n</js>",
+  "ruleDescription": "",
+  "ruleImage": "@css:img@src",
+  "ruleLink": "<js>\nvurl=String(result).match(/href=\"(.*?)\"/)[1];\nhtml=java.ajax(\"https://www.88move.com\");\nurl=html.match(/href=\"([^\"]+)\\/\"/)[1];\nurls=url+vurl;\n</js>",
+  "ruleNextPage": "<js>\nvar sear=baseUrl.search(/_/)\nif(sear==-1){\nbaseUrl=baseUrl+'index_1.html'\n}\nvar path1=String(baseUrl).match(/index_.*\\./)[0]\r\nvar path2=path1.replace(/index_|\\./,'')\r\nvar num1=Number(path2)+1\r\nvar objk=String(baseUrl).replace(/index.*\\./, 'index_'+num1+'.' )\r\nresult=objk\n\r\n</js>",
+  "rulePubDate": "@css:.bg_top@text",
+  "ruleTitle": "@css:h3@text",
+  "sortUrl": "亚洲无码::https://www.586mk.com/move/1/\n自拍偷拍::https://www.586mk.com/move/3/\n手机视频::https://www.586mk.com/move/7/\n亚洲有码::https://www.586mk.com/move/2/\n欧美性爱::https://www.586mk.com/move/4/\n三级写真::https://www.586mk.com/move/5/\n成人动漫::https://www.586mk.com/move/6/",
+  "sourceGroup": "福利",
+  "sourceIcon": "http://img.smzy.com/imges/2019/1121/20191121091714899.png",
+  "sourceName": "东方影视",
+  "sourceUrl": "https://www.586mk.com/move/2/index.html"
+}]
