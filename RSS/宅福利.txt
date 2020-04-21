@@ -1,0 +1,20 @@
+[{
+  "customOrder": 0,
+  "enableJs": false,
+  "enabled": true,
+  "header": "",
+  "loadWithBaseUrl": true,
+  "ruleArticles": "class.excerpt excerpt-one.!-1",
+  "ruleContent": "<js>\nvar doc=org.jsoup.Jsoup.parse(result)\nvar id=doc.select(\".article-content\")\nvar next\nvar xiia\nvar cont=new Array()\nvar zong\nvar net=baseUrl\nvar net2\nfor(var i=0;i<50;i++){\nnext=java.getString('text.下一页@href', Boolean =false)\nif(String(next)!==''){\nnet2=net.split('/').pop()\nnet=net.replace(net2,'')\nxiia=java.ajax(net+next)\nxiia=org.jsoup.Jsoup.parse(xiia)\ncont[i]=xiia.select('.article-content')\njava.setContent(xiia)\nzong=zong+cont[i]\nnet=this.baseUrl\n}}\nresult=id+zong\n</js>",
+  "ruleDescription": "",
+  "ruleImage": "class.thumbnail@tag.img@src",
+  "ruleLink": "tag.h2@tag.a.0@href@js:'https://qqc962.com'+result",
+  "ruleNextPage": "text.下一页@href",
+  "rulePubDate": "class.text-muted time@text",
+  "ruleTitle": "tag.h2@tag.a.0@text",
+  "sortUrl": "撸一撸::https://qqc962.com/luyilu/\n宅福利::https://qqc962.com/zhaifuli/\n宅男社::https://qqc962.com/zhainanshe/\nTP::https://qqc962.com/Tpimage/\nGR::https://qqc962.com/Graphis/",
+  "sourceGroup": "福利",
+  "sourceIcon": "http://img.smzy.com/imges/2019/1030/20191030042515217.png",
+  "sourceName": "福利图",
+  "sourceUrl": "https://qqc962.com"
+}]
